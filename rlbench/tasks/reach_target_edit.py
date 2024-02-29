@@ -12,8 +12,6 @@ class ReachTargetEdit(Task):
 
     def init_task(self) -> None:
         self.target = Shape('target')
-        self.distractor0 = Shape('distractor0')
-        self.distractor1 = Shape('distractor1')
         self.boundaries = Shape('boundary')
         success_sensor = ProximitySensor('success')
         self.register_success_conditions(
@@ -25,11 +23,8 @@ class ReachTargetEdit(Task):
         color_choices = np.random.choice(
             list(range(index)) + list(range(index + 1, len(colors))),
             size=2, replace=False)
-        for ob, i in zip([self.distractor0, self.distractor1], color_choices):
-            name, rgb = colors[i]
-            ob.set_color(rgb)
         b = SpawnBoundary([self.boundaries])
-        for ob in [self.target, self.distractor0, self.distractor1]:
+        for ob in [self.target]:
             b.sample(ob, min_distance=0.2,
                      min_rotation=(0, 0, 0), max_rotation=(0, 0, 0))
 
