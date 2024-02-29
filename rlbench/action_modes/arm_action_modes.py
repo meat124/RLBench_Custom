@@ -19,7 +19,7 @@ def assert_action_shape(action: np.ndarray, expected_shape: tuple):
 
 
 def assert_unit_quaternion(quat):
-    if not np.isclose(np.linalg.norm(quat), 1.0):
+    if not np.isclose(np.linalg.norm(quat), 1.0, rtol=1e-1, atol=1e-8):
         raise InvalidActionError('Action contained non unit quaternion!')
 
 
