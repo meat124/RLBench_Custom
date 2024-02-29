@@ -70,6 +70,7 @@ from rlbench.tasks.put_umbrella_in_umbrella_stand import \
     PutUmbrellaInUmbrellaStand
 from rlbench.tasks.reach_and_drag import ReachAndDrag
 from rlbench.tasks.reach_target import ReachTarget
+from rlbench.tasks.reach_target_edit import ReachTargetEdit
 from rlbench.tasks.remove_cups import RemoveCups
 from rlbench.tasks.scoop_with_spatula import ScoopWithSpatula
 from rlbench.tasks.screw_nail import ScrewNail
@@ -114,6 +115,7 @@ from rlbench.tasks.wipe_desk import WipeDesk
 FS10_V1 = {
     'train': [
         ReachTarget,
+        ReachTargetEdit,
         CloseBox,
         CloseMicrowave,
         PlugChargerInPowerSupply,
